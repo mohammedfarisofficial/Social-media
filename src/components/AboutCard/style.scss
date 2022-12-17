@@ -1,0 +1,13 @@
+.about-card {
+  width: 400px;
+  height: 300px;
+  background-color: green;
+  position: fixed;
+  left: 5rem;
+  @media (max-width: 1400px) {
+     width:300px;
+  }
+  @media (max-width: 1220px) {
+     width:200px;
+  }
+}

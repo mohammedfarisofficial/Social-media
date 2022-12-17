@@ -1,0 +1,10 @@
+.postfeed-container {
+  width: 450px;
+  min-height: 600px;
+  margin-top: 2rem;
+  border-radius: 40px;
+  overflow: hidden;
+  @media (max-width: 514px) {
+    width: 90%;
+  }
+}

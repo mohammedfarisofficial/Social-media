@@ -1,0 +1,8 @@
+.add-post-container {
+  width: 450px;
+  height: 100px;
+  background-color: red;
+  @media (max-width: 514px) {
+    width: 90%;
+  }
+}

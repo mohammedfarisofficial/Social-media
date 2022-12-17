@@ -1,0 +1,21 @@
+.home-container {
+  width: 100%;
+  min-height: 200vh;
+  background-color: #0F0E13;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 5rem 0;
+  // margin-top: 90px;
+  @media (max-width: 514px) {
+    width: 100%;
+    padding: 2rem 0 0;
+  }
+}
+.feed{
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}

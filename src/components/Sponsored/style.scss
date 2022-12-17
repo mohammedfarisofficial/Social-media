@@ -1,0 +1,51 @@
+.sponsored-container {
+  width: 400px;
+  height: 250px;
+  background-color: #1a1c20;
+  position: fixed;
+  right: 5rem;
+  border-radius: 40px;
+  overflow: hidden;
+  @media (max-width: 1400px) {
+    width: 300px;
+  }
+  @media (max-width: 1220px) {
+    width: 200px;
+  }
+}
+.title-container {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  color: white;
+  h2{
+    font-size: 15px;
+    font-weight: 400;
+  }
+  p{
+    color: rgba(199, 199, 199, 0.594);
+    font-size: 10px;
+  }
+}
+.image-container {
+  height: 70%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+  }
+}
+.text-container{
+  width: 100%;
+  height: 10%;
+  background-color: red;
+}

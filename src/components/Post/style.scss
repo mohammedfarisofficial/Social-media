@@ -1,0 +1,114 @@
+.post-container {
+  width: 100%;
+  height: 80vh;
+  background-color: #1a1c20;
+  margin-bottom: 1rem;
+}
+.post-user {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  padding-left: 1rem;
+  .post-user-details {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    .user-image {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+    .user-detail {
+      width: 100%;
+      padding-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      h3 {
+        font-weight: 500px;
+        font-size: 14px;
+        color: white;
+      }
+      p {
+        font-weight: 500px;
+        font-size: 10px;
+        color: #b5b5b5;
+      }
+    }
+  }
+  .post-follow-button {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      cursor: pointer;
+      width: 80px;
+      height: 27px;
+      border-radius: 10px;
+      font-size: 12px;
+      outline: none;
+      font-weight: 500;
+    }
+    .follow {
+      color: white;
+      background-color: #1778f2;
+      border: none;
+    }
+    .unfollow {
+      background-color: white;
+      color: #1778f2;
+      border: none;
+      //  border: 3px solid #1778f2 ;
+    }
+  }
+}
+.post-description {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  min-height: 5%;
+  max-height: 10%;
+  p {
+    color: #d9d9d9;
+    font-size: 10px;
+    font-weight: 200;
+  }
+}
+.post-image {
+  overflow: hidden;
+  width: 100%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 95%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.post-likes-comments {
+  height: 10%;
+  width: 60%;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 12px;
+  .likes{
+    margin-right: .5rem;
+  }
+  .commets{
+
+  }
+}

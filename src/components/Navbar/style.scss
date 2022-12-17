@@ -1,0 +1,49 @@
+.nav-container {
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  padding: 0 5rem;
+  display: flex;
+  .nav-lt {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //     background-color: black;
+    h2 {
+      font-size: 30px;
+      color: white;
+    }
+    input {
+      width: 70%;
+      height: 40px;
+      border-radius: 24px;
+      outline: none;
+      border: none;
+      background-color: #664b4a4a;
+      padding-left: 2rem;
+      color: white;
+    }
+    input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration {
+      -webkit-appearance: none;
+    }
+  }
+  .nav-rt{
+    // background-color:red;
+    width: 100%;
+    height: 100%;
+    .icon{
+      color: #000;
+    }
+  }
+}
