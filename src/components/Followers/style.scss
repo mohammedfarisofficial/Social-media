@@ -3,7 +3,7 @@
   height: 350px;
   background-color: #1a1c20;
   border-radius: 15px;
-  overflow: hidden;
+  // overflow: hidden;
   position: fixed;
   right: 5rem;
   top: 500px;
@@ -12,5 +12,29 @@
   }
   @media (max-width: 1220px) {
     width: 200px;
+  }
+  .followers-title{
+    width: 100%;
+    height: 15%;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid #2e2e2e ;
+    h3{
+      font-size: 15px;
+      color: white;
+    }
+  }
+  .following-container{
+    height: 85%;
+    overflow-y: scroll;
+    padding: 0 2rem;
+    //hide scrollbar - firebox
+    scrollbar-width: none;
+    //hide scrollbar - safari and chrome
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }

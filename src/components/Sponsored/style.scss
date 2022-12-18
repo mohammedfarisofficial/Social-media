@@ -2,10 +2,10 @@
   width: 400px;
   height: 350px;
   background-color: #1a1c20;
-  position: fixed;
-  right: 5rem;
   border-radius: 15px;
   overflow: hidden;
+  position: fixed;
+  right: 5rem;
   @media (max-width: 1400px) {
     width: 300px;
   }
