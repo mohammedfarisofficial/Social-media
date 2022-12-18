@@ -1,9 +1,12 @@
-import React from 'react'
+import './style.scss'
+import Layout from "../Layout/Layout";
 
 const RegisterPage = () => {
   return (
-    <div>RegisterPage</div>
-  )
-}
+    <Layout>
+      <div className='register-container'>RegisterPage</div>
+    </Layout>
+  );
+};
 
-export default RegisterPage
+export default RegisterPage;

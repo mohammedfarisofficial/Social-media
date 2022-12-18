@@ -1,11 +1,11 @@
 import Navbar from "../../components/Navbar/Navbar";
-import './style.scss'
+import "./style.scss";
 
 const Layout = ({ children }) => {
   return (
     <div className="wrapper">
       <Navbar />
-      {children}
+      <div className="child-wrapper">{children}</div>
     </div>
   );
 };
