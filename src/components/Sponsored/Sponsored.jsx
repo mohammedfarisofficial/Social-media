@@ -1,11 +1,11 @@
-import './style.scss'
+import "./style.scss";
 
 const Sponsored = () => {
   const imageURL =
-    "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80";
-  
+    "https://m.media-amazon.com/images/G/01/AdProductsWebsite/images/logos/OG_image_Squid_Ink.png";
+
   return (
-    <div className='sponsored-container'>
+    <div className="sponsored-container">
       <div className="title-container">
         <h2>Sponsored</h2>
         <p>Create Ad</p>
@@ -13,9 +13,17 @@ const Sponsored = () => {
       <div className="image-container">
         <img src={imageURL} alt="" />
       </div>
-      <div className="text-container"></div>
+      <div className="text-container">
+        <div className="top-container">
+          <h3>Amazone Ads</h3>
+          <p>www.amazone.com</p>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, laborum.
+        </p>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sponsored
+export default Sponsored;
