@@ -4,8 +4,8 @@ const PostFeed = () => {
   const posts = [
     {
       _id: 1,
-      name: "Mohammed Faris",
-      location: "Palakkad,Kerala",
+      name: "Bella Hadid",
+      location: "Washington, D.C., United States",
       description: "Whatever is good for your soul, do that",
       profileImg:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYFLzEzuEP7gh3AZqs_EhFKXdfLkVZSnXB2Q&usqp=CAU",
