@@ -8,7 +8,7 @@ const Post = ({ post }) => {
       <div className="post-user">
         <div className="post-user-details">
           <div className="user-image">
-            <img src={post.profileImg} alt="" />
+            <img loading="lazy" src={post.profileImg} alt="" />
           </div>
           <div className="user-detail">
             <h3>{post.name}</h3>
@@ -27,7 +27,7 @@ const Post = ({ post }) => {
         <p>{post.description}</p>
       </div>
       <div className="post-image">
-        <img src={post.postImg} alt="" />
+        <img loading="lazy" src={post.postImg} alt="" />
       </div>
       <div className="post-likes-comments">
         <div className="likes">

@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./app.scss";
 import { HomePage,RegisterPage } from "./pages";
+import "./app.scss";
 function App() {
   return (
     <BrowserRouter>
