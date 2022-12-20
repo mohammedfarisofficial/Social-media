@@ -5,6 +5,9 @@
   overflow: hidden;
   border-radius: 14px;
   position: relative;
+  @media (max-width: 524px ){
+    height: 50px;
+  }
   label {
     position: absolute;
     left: 1.5rem;

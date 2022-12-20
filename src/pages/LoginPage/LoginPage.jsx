@@ -15,8 +15,8 @@ const LoginPage = () => {
             <h4>Welcome back! Please enter your details</h4>
           </div>
           <form action=""></form>
-          <FormInput />
-          <FormInput />
+          <FormInput inputName="Email" />
+          <FormInput type="password" inputName="Password" />
           <FormSwitch route="login" />
           <FormButton buttonName="Sign In" />
         </FormCard>

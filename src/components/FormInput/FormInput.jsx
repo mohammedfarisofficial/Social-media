@@ -13,7 +13,7 @@ const FormInput = ({ isHalf, inputName = "Name" ,type}) => {
       >
         {inputName}
       </label>
-      <input type={ type === "password" ? 'password' : 'text'} onChange={e=>setInputText(e.target.value)} name={inputName} />
+      <input required type={ type === "password" ? 'password' : 'text'} onChange={e=>setInputText(e.target.value)} name={inputName} />
     </div>
   );
 };

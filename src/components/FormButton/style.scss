@@ -1,16 +1,22 @@
-.formButton-container{
-     width: 90%;
-     height: 50px;
-     background-color: #1778F2;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     border-radius: 14px;
-     margin: 2rem 0;
-     cursor: pointer;
-     h3{
-          font-size: 15px;
-          font-weight: 500;
-          color: #fff;
-     }
+.formButton-container {
+  width: 90%;
+  height: 50px;
+  background-color: #1778f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  margin: 2rem 0;
+  cursor: pointer;
+  @media (max-width: 524px) {
+     width: 40%;
+  }
+  h3 {
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    @media (max-width: 524px) {
+     font-size: 12px;
+  }
+  }
 }

@@ -4,6 +4,7 @@ import FormCard from "../../components/FormCard/FormCard";
 import FormButton from "../../components/FormButton/FormButton";
 import FormInput from "../../components/FormInput/FormInput";
 import FormSwitch from "../../components/FormSwitch/FormSwitch";
+import FormFile from "../../components/FormFile/FormFile";
 
 const RegisterPage = () => {
   return (
@@ -23,6 +24,7 @@ const RegisterPage = () => {
             </div>
             <FormInput inputName="Location" isHalf={false} />
             <FormInput inputName="Occupation" isHalf={false} />
+            <FormFile/>
             <FormInput inputName="Email" isHalf={false} />
             <FormInput inputName="Password" type="password" isHalf={false} />
           </form>
