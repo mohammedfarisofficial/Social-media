@@ -5,10 +5,10 @@ import "./style.scss";
 
 
 const Layout = ({ children }) => {
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => setIsLoading(false), 3500);
-  }, [isLoading]);
+  const [isLoading, setIsLoading] = useState(false);
+  // useEffect(() => {
+  //   setTimeout(() => setIsLoading(true), 3500);
+  // }, [isLoading]);
 
   return isLoading === false ? (
     <div className="wrapper">
