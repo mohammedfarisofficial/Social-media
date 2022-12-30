@@ -9,6 +9,7 @@
   -webkit-backdrop-filter: blur(30px);
   padding: 0 5rem;
   display: flex;
+  z-index: 999;
   @media (max-width: 1024px) {
     height: 50px;
     padding: 0 2rem;
@@ -19,19 +20,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    //     background-color: black;
+    @media (max-width: 1024px) {
+      justify-content: flex-start;
+    }
     h2 {
       font-size: 20px;
       color: white;
     }
-    img{
+    img {
       width: 30px;
       height: 30px;
       object-fit: cover;
-      margin-right: .5rem;
+      margin-right: 0.5rem;
     }
     input {
-      margin-left: .5rem;
+      margin-left: 0.5rem;
       width: 70%;
       height: 40px;
       border-radius: 24px;
@@ -48,11 +51,82 @@
       -webkit-appearance: none;
     }
   }
-  .nav-rt{
-    width: 100%;
+  .nav-rt {
+    width: 50%;
     height: 100%;
-    .icon{
-      color: #000;
+    // background-color: red;
+    display: flex;
+    .nav-icons-container {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .nav-action-icon {
+        margin-left: 3rem;
+        width: 18px;
+        cursor: pointer;
+      }
+    }
+    .nav-actions-container {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      @media (max-width: 1024px) {
+        width: 100%;
+        justify-content: flex-end;
+      }
+      .nav-action-inner {
+        min-width: 150px;
+        height: 40px;
+        background-color: #1a1c20;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 14px;
+        cursor: pointer;
+
+        @media (max-width: 1024px) {
+          min-width: 120px;
+          height: 30px;
+        }
+        h3 {
+          color: #696969;
+          font-size: 10px;
+          font-weight: 600;
+          user-select: none;
+          -webkit-user-select: none; /* Safari */
+          -ms-user-select: none; /* IE 10 and IE 11 */
+          user-select: none; /* Standard syntax */
+          @media (max-width: 1024px) {
+            font-size: 8px;
+          }
+        }
+        img {
+          width: 10px;
+          @media (max-width: 1024px) {
+            width: 8px;
+          }
+        }
+      }
+      .dropdown-menu {
+        position: fixed;
+        width: 200px;
+        min-height: 100px;
+        display: block;
+        border-radius: 14px;
+        top: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: #1a1c20;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+          rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      }
     }
   }
 }

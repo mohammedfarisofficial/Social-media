@@ -17,6 +17,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    object-fit: cover;
   }
   .addpost-search {
     width: 80%;
@@ -38,7 +39,7 @@
 }
 .addpost-media {
   width: 100%;
-  height: 40%;
+  min-height: 40%;
   display: flex;
   justify-content: space-evenly;
   padding: 0 2rem;
@@ -47,24 +48,59 @@
   .addpost-attachment,
   .addpost-audio {
     width: 25%;
-    margin: .4px;
+    margin: 0.4px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #B5B5B5;
-    h3{
+    color: #b5b5b5;
+    cursor: pointer;
+    h3 {
       font-size: 12px;
       font-weight: 300;
-      margin-left: .5rem;
-      color: #B5B5B5;
+      margin-left: 0.5rem;
+      color: #b5b5b5;
+    }
+    img {
+      width: 14px;
+      object-fit: cover;
     }
   }
-  .addpost-image {
+}
+
+.dropzone-container {
+  width: 100%;
+  color: white;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  .dropzone-inner {
+    height: 100%;
+    width: 85%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2rem;
+    width: "100%";
+    border: 1px solid #b5b5b5;
+    border-radius: 14px;
   }
-  .addpost-clip {
+  p {
+    font-size: 14px;
+    color: #b5b5b5;
   }
-  .addpost-attachment {
-  }
-  .addpost-audio {
+  .cancel-btn {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    img {
+      width: 15px;
+    }
+    .paper-plane {
+      width: 20px;
+    }
   }
 }

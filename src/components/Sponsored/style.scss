@@ -6,6 +6,7 @@
   overflow: hidden;
   position: fixed;
   right: 5rem;
+  z-index: 1;
   @media (max-width: 1400px) {
     width: 300px;
   }

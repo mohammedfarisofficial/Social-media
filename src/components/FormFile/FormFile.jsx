@@ -1,11 +1,16 @@
-import './style.scss'
+import "./style.scss";
 
-const FormFile = () => {
+const FormFile = ({ setState }) => {
   return (
-    <div className='formFile-container'>
-     <input title=" " name='photo' type="file" />
+    <div className="formFile-container">
+      <input
+        onChange={(e) => setState(e.target.files[0])}
+        title=" "
+        name="photo"
+        type="file"
+      />
     </div>
-  )
-}
+  );
+};
 
-export default FormFile
+export default FormFile;

@@ -1,9 +1,11 @@
-import './style.scss'
+import "./style.scss";
 
-const FormButton = ({ buttonName = "Button"}) => {
+const FormButton = ({ onClick, buttonName = "Button" }) => {
   return (
-    <div className='formButton-container'><h3>{buttonName}</h3></div>
-  )
-}
+    <div className="formButton-container">
+      <button onClick={onClick}>{buttonName}</button>
+    </div>
+  );
+};
 
-export default FormButton
+export default FormButton;

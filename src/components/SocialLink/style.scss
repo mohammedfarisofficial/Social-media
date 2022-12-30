@@ -1,0 +1,23 @@
+.social-link {
+  width: 100%;
+  height: 50px;
+  margin-top: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .icon {
+    color: #b5b5b5;
+  }
+  .social-link-title {
+    flex: 1;
+    margin-left: 1rem;
+    h4 {
+      font-size: 15px;
+      color: #b5b5b5;
+    }
+    p {
+      font-size: 10px;
+      color: #b5b5b5;
+    }
+  }
+}

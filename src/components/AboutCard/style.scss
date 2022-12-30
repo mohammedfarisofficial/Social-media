@@ -1,13 +1,125 @@
 .about-card {
   width: 400px;
-  height: 300px;
-  background-color: green;
+  min-height: 300px;
+  background-color: #1a1c20;
   position: fixed;
   left: 5rem;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @media (max-width: 1400px) {
-     width:300px;
+    width: 300px;
   }
   @media (max-width: 1220px) {
-     width:200px;
+    width: 200px;
+  }
+  .about-profile {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5rem;
+    img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .about-title-container {
+      flex: 1;
+      padding-left: 1rem;
+      h2 {
+        font-size: 17px;
+        color: #fff;
+      }
+      p {
+        font-size: 10px;
+        color: #b5b5b5;
+      }
+    }
+    .about-setting-icon {
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      img {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+      }
+    }
+  }
+  .about-more-details {
+    width: 100%;
+    height: 80px;
+    padding: 0 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .location-details,
+    .occupation-details {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      div {
+        color: white;
+      }
+      p {
+        margin-left: 0.5rem;
+        color: #7a7a7a;
+        font-size: 12px;
+      }
+      .icon {
+        img {
+          width: 12px;
+        }
+      }
+    }
+  }
+  .about-reach {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 2.5rem;
+    .about-reach-view,
+    .about-reach-impressions {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      p {
+        margin-left: 0.5rem;
+        color: #7a7a7a;
+        font-size: 12px;
+      }
+      h4 {
+        color: rgb(204, 201, 201);
+        font-size: 12px;
+      }
+    }
+  }
+  .about-social-profile {
+    width: 100%;
+    height: 200px;
+    padding: 0 2.5rem;
+    .social-profile-title {
+      width: 100%;
+      height: 40px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      h4 {
+        font-size: 13px;
+        font-weight: 500;
+        color: #b5b5b5;
+      }
+    }
   }
 }

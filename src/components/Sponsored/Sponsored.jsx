@@ -19,7 +19,8 @@ const Sponsored = () => {
           <p>www.amazone.com</p>
         </div>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, laborum.
+          Advertising helps drive sales, build your brand, and engage customers
+          on and off Amazon.
         </p>
       </div>
     </div>

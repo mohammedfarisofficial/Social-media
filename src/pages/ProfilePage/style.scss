@@ -1,0 +1,15 @@
+.profile-page-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0f0e13;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 5rem 0;
+  padding-top: 110px;
+  // margin-top: 90px;
+  @media (max-width: 514px) {
+    width: 100%;
+    padding: 2rem 0 0;
+    padding-top: 100px;
+  }
+}
