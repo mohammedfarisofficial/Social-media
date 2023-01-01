@@ -1,15 +1,14 @@
-import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import "./style.scss";
+//
 import Layout from "../Layout/Layout";
 import FormCard from "../../components/FormCard/FormCard";
 import FormButton from "../../components/FormButton/FormButton";
 import FormInput from "../../components/FormInput/FormInput";
 import FormSwitch from "../../components/FormSwitch/FormSwitch";
 import FormFile from "../../components/FormFile/FormFile";
-//
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setLogin } from "../../state";
+
 const RegisterPage = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -18,10 +17,12 @@ const RegisterPage = () => {
   const [image, setImage] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
   const handleRegister = async () => {
+    setIsLoading(true);
     const base64 = await convertToBase64(image);
     const formData = new FormData();
     formData.append("firstName", firstName);
@@ -42,6 +43,7 @@ const RegisterPage = () => {
     );
     const savedUser = await savedUserResponse.json();
     if (savedUser) {
+      setIsLoading(false);
       navigate("/login");
     }
   };
@@ -111,7 +113,11 @@ const RegisterPage = () => {
             />
           </form>
           <FormSwitch route="register" />
-          <FormButton onClick={handleRegister} buttonName="Create account" />
+          <FormButton
+            isLoading={isLoading}
+            onClick={handleRegister}
+            buttonName="Create account"
+          />
         </FormCard>
       </div>
     </Layout>

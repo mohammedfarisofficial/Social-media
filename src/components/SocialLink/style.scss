@@ -5,8 +5,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
   .icon {
     color: #b5b5b5;
+    img {
+      width: 15px;
+    }
   }
   .social-link-title {
     flex: 1;

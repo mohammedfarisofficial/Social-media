@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import "./style.scss";
+//comp
 import Line from "../Line/Line";
 import SocialLink from "../SocialLink/SocialLink";
-import "./style.scss";
 //icons
 import locationIcon from "../../assets/icons/location-dot-solid.svg";
 import briefcaseIcon from "../../assets/icons/briefcase-solid.svg";
@@ -39,12 +40,9 @@ const AboutCard = ({ userId }) => {
     viewedProfile,
     impressions,
     friends,
-    picturePath,
     picture2,
   } = user;
 
-  const profileImg =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYFLzEzuEP7gh3AZqs_EhFKXdfLkVZSnXB2Q&usqp=CAU";
   return (
     <div className={isProfile ? "about-card profile-card" : "about-card"}>
       <div className="about-profile">

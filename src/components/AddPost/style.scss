@@ -54,15 +54,21 @@
     align-items: center;
     color: #b5b5b5;
     cursor: pointer;
-    h3 {
+    .icon-text {
       font-size: 12px;
       font-weight: 300;
       margin-left: 0.5rem;
       color: #b5b5b5;
+      @media (max-width: 454px) {
+        font-size: 11px;
+      }
     }
     img {
       width: 14px;
       object-fit: cover;
+      @media (max-width: 454px) {
+        width: 12px;
+      }
     }
   }
 }
@@ -99,7 +105,7 @@
     img {
       width: 15px;
     }
-    .paper-plane {
+    .paper-plane-loading {
       width: 20px;
     }
   }

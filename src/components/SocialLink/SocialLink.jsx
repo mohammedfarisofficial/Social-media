@@ -1,4 +1,5 @@
 import "./style.scss";
+import pencilIcon from "../../assets/icons/pencil-solid.svg";
 
 const SocialLink = () => {
   return (
@@ -8,7 +9,9 @@ const SocialLink = () => {
         <h4>Twitter</h4>
         <p>Social Profile</p>
       </div>
-      <div className="social-edit-icon icon">G</div>
+      <div className="social-edit-icon icon">
+        <img src={pencilIcon} alt="edit-btn" />
+      </div>
     </div>
   );
 };

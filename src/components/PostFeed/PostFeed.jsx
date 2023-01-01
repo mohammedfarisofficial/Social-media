@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import "./style.scss";
-import Post from "../Post/Post";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "../../state/index";
 import { useParams } from "react-router-dom";
+
+import Post from "../Post/Post";
 
 const PostFeed = ({ isProfile = false }) => {
   const dispatch = useDispatch();
@@ -44,8 +45,8 @@ const PostFeed = ({ isProfile = false }) => {
 
   return (
     <div className="postfeed-container">
-      {posts.map((post, index) => (
-        <Post key={index} post={post} friendId={post.userId} />
+      {posts?.map((post, index) => (
+        <Post key={index} post={post} friendId={post?.userId} />
       ))}
     </div>
   );

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import "./style.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { setFriends, setPost } from "../../state";
 import { useNavigate } from "react-router-dom";
+import "./style.scss";
+import { setFriends, setPost } from "../../state";
+//icons
 import heartIcon from "../../assets/icons/heart-regular.svg";
 import solidHartIcon from "../../assets/icons/heart-solid.svg";
 import commentIcon from "../../assets/icons/comment-solid.svg";
@@ -21,7 +22,7 @@ const Post = ({ post, friendId }) => {
   // const [isComments, setIsComments] = useState(false);
 
   useEffect(() => {
-    setIsFriend(friends.find((friend) => friend._id === friendId));
+    setIsFriend(friends.find((friend) => friend?._id === friendId));
   }, [friendId, friends]);
   useEffect(() => {
     if (friendId === _id) {
@@ -31,7 +32,7 @@ const Post = ({ post, friendId }) => {
 
   const patchLike = async () => {
     const response = await fetch(
-      process.env.REACT_APP_API_URL + `/posts/${post._id}/like`,
+      process.env.REACT_APP_API_URL + `/posts/${post?._id}/like`,
       {
         method: "PATCH",
         headers: {
@@ -76,17 +77,13 @@ const Post = ({ post, friendId }) => {
       <div className="post-user">
         <div className="post-user-details">
           <div className="user-image">
-            <img
-              loading="lazy"
-              src={`http://localhost:3001/assets/${post.userPicturePath}`}
-              alt=""
-            />
+            <img loading="lazy" src={post?.userPicturePath} alt="" />
           </div>
           <div onClick={(e) => profileHandler(e)} className="user-detail">
             <h3>
-              {post.firstName} {post.lastName}
+              {post?.firstName} {post?.lastName}
             </h3>
-            <p>{post.location}</p>
+            <p>{post?.location}</p>
           </div>
         </div>
         <div className="post-follow-button">
@@ -103,15 +100,10 @@ const Post = ({ post, friendId }) => {
         </div>
       </div>
       <div className="post-description">
-        <p>{post.description}</p>
+        <p>{post?.description}</p>
       </div>
       <div className="post-image">
-        <img
-          loading="lazy"
-          // src={`http://localhost:3001/assets/${post.picturePath}`}
-          src={post.picture2}
-          alt=""
-        />
+        <img loading="lazy" src={post?.picture2} alt="" />
       </div>
       <div className="post-likes-comments">
         <div className="likes">
@@ -147,13 +139,3 @@ const Post = ({ post, friendId }) => {
 };
 
 export default Post;
-
-// isFriend ? (
-//   <button onClick={patchFriend} className="unfollow">
-//     unfollow
-//   </button>
-// ) : (
-//   <button onClick={patchFriend} className="follow">
-//     follow
-//   </button>
-// )

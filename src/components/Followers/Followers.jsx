@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-import "./style.scss";
-import Friend from "../Friend/Friend";
 import { useSelector, useDispatch } from "react-redux";
 import { setFriends } from "../../state/index";
+import "./style.scss";
+import Friend from "../Friend/Friend";
+
 const Followers = () => {
   const { _id } = useSelector((state) => state.user);
-  // const userId = "6390af70cd8376b56d7657f2";
   const friends = useSelector((state) => state.user.friends);
   const token = useSelector((state) => state.token);
 
@@ -34,7 +34,7 @@ const Followers = () => {
       </div>
       <div className="following-container">
         {friends &&
-          friends.map((friend, index) => (
+          friends?.map((friend, index) => (
             <Friend key={index} friend={friend} />
           ))}
       </div>

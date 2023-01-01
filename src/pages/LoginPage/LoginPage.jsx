@@ -8,12 +8,11 @@ import FormCard from "../../components/FormCard/FormCard";
 import FormButton from "../../components/FormButton/FormButton";
 import FormSwitch from "../../components/FormSwitch/FormSwitch";
 import FormInput from "../../components/FormInput/FormInput";
-import Loading from "../../components/Loading/Loading";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -23,7 +22,7 @@ const LoginPage = () => {
     password,
   };
   const handleLogin = async () => {
-    setLoading(true);
+    setIsLoading(true);
     const loggedInUserResponse = await fetch(
       process.env.REACT_APP_API_URL + "/auth/login",
       {
@@ -35,34 +34,34 @@ const LoginPage = () => {
     const loggedIn = await loggedInUserResponse.json();
     if (loggedIn) {
       dispatch(setLogin({ user: loggedIn.user, token: loggedIn.token }));
-      setLoading(false);
+      setIsLoading(false);
       navigate("/");
     }
   };
   return (
     <Layout>
-      {loading ? (
-        <Loading />
-      ) : (
-        <div className="login-container">
-          <FormCard>
-            <div className="login-titles">
-              <h2>Welcome Back</h2>
-              <h4>Welcome back! Please enter your details</h4>
-            </div>
-            <form action=""></form>
-            <FormInput state={email} setState={setEmail} inputName="Email" />
-            <FormInput
-              state={password}
-              setState={setPassword}
-              type="password"
-              inputName="Password"
-            />
-            <FormSwitch route="login" />
-            <FormButton onClick={handleLogin} buttonName="Sign In" />
-          </FormCard>
-        </div>
-      )}
+      <div className="login-container">
+        <FormCard>
+          <div className="login-titles">
+            <h2>Welcome Back</h2>
+            <h4>Welcome back! Please enter your details</h4>
+          </div>
+          <form action=""></form>
+          <FormInput state={email} setState={setEmail} inputName="Email" />
+          <FormInput
+            state={password}
+            setState={setPassword}
+            type="password"
+            inputName="Password"
+          />
+          <FormSwitch route="login" />
+          <FormButton
+            isLoading={isLoading}
+            onClick={handleLogin}
+            buttonName="Sign In"
+          />
+        </FormCard>
+      </div>
     </Layout>
   );
 };

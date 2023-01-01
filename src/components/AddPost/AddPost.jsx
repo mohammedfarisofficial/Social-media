@@ -1,6 +1,8 @@
 import { useState } from "react";
-import "./style.scss";
 import Dropzone from "react-dropzone";
+import { useDispatch, useSelector } from "react-redux";
+import "./style.scss";
+import { setPosts } from "../../state";
 //icons
 import imageIcon from "../../assets/icons/image-solid.svg";
 import diskIcon from "../../assets/icons/compact-disc-solid.svg";
@@ -8,18 +10,19 @@ import attachIcon from "../../assets/icons/paperclip-solid.svg";
 import microphoneIcon from "../../assets/icons/microphone-solid.svg";
 import closeIcon from "../../assets/icons/xmark-solid.svg";
 import paperPlaneIcon from "../../assets/icons/paper-plane-solid.svg";
-import { useDispatch, useSelector } from "react-redux";
-import { setPosts } from "../../state";
+import loadingSpinner from "../../assets/icons/Rolling-1s-200px.svg";
 
 const AddPost = ({ picturePath, userId }) => {
   const [image, setImage] = useState(null);
   const [post, setPost] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [isDropOpen, setIsDropOpen] = useState(false);
   const token = useSelector((state) => state.token);
 
   const dispatch = useDispatch();
 
   const handlePost = async () => {
+    setIsLoading(true);
     const formData = new FormData();
     const base64 = await convertToBase64(image);
     formData.append("userId", userId);
@@ -38,7 +41,8 @@ const AddPost = ({ picturePath, userId }) => {
       const posts = await response.json();
       dispatch(setPosts({ posts }));
       setImage(null);
-      setPost("");
+      setPost(null);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -67,20 +71,20 @@ const AddPost = ({ picturePath, userId }) => {
         {!isDropOpen && (
           <>
             <div onClick={() => setIsDropOpen(true)} className="addpost-image">
-              <img src={imageIcon} alt="user-icon" />
-              <h3>image</h3>
+              <img src={imageIcon} alt="user-icon icon" />
+              <h3 className="icon-text">image</h3>
             </div>
             <div className="addpost-clip">
-              <img src={diskIcon} alt="disk-icon" />
-              <h3>clip</h3>
+              <img src={diskIcon} alt="disk-icon icon" />
+              <h3 className="icon-text">clip</h3>
             </div>
             <div className="addpost-attachment">
-              <img src={attachIcon} alt="attach-icon" />
-              <h3>attachment</h3>
+              <img src={attachIcon} alt="attach-icon icon" />
+              <h3 className="icon-text">attachment</h3>
             </div>
             <div className="addpost-audio">
-              <img src={microphoneIcon} alt="microphone-icon" />
-              <h3>audio</h3>
+              <img src={microphoneIcon} alt="microphone-icon icon" />
+              <h3 className="icon-text">audio</h3>
             </div>
           </>
         )}
@@ -105,12 +109,19 @@ const AddPost = ({ picturePath, userId }) => {
                   onClick={() => setIsDropOpen(false)}
                   alt="close-btn"
                 />
+              ) : isLoading ? (
+                <img
+                  src={loadingSpinner}
+                  onClick={handlePost}
+                  alt="send-btn"
+                  className="paper-plane-loading"
+                />
               ) : (
                 <img
                   src={paperPlaneIcon}
                   onClick={handlePost}
                   alt="send-btn"
-                  className="paper-plane"
+                  className="paper-plane-loading"
                 />
               )}
             </div>
