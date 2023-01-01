@@ -11,7 +11,7 @@ import settingIcons from "../../assets/icons/gear-solid.svg";
 const AboutCard = ({ userId }) => {
   const [user, setUser] = useState(null);
   const token = useSelector((state) => state.token);
-
+  const isProfile = true;
   const getUser = async () => {
     const response = await fetch(
       process.env.REACT_APP_API_URL + `/users/${userId}`,
@@ -46,7 +46,7 @@ const AboutCard = ({ userId }) => {
   const profileImg =
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYFLzEzuEP7gh3AZqs_EhFKXdfLkVZSnXB2Q&usqp=CAU";
   return (
-    <div className="about-card">
+    <div className={isProfile ? "about-card profile-card" : "about-card"}>
       <div className="about-profile">
         <img src={picture2} alt="" />
         <div className="about-title-container">
