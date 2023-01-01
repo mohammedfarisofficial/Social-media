@@ -102,8 +102,8 @@ const Post = ({ post, friendId }) => {
       <div className="post-description">
         <p>{post?.description}</p>
       </div>
-      <div className="post-image">
-        <img loading="lazy" src={post?.picture2} alt="" />
+      <div onDoubleClick={patchLike} className="post-image">
+        <img loading="lazy" src={post?.picture2} alt="post" />
       </div>
       <div className="post-likes-comments">
         <div className="likes">

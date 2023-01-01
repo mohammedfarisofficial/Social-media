@@ -14,7 +14,7 @@ const Friend = ({ friend }) => {
         <p>{friend?.occupation}</p>
       </div>
       <div className="icon">
-        <img src={removeFriendIcon} />
+        <img src={removeFriendIcon} alt="remove-icon" />
       </div>
     </div>
   );
